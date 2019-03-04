@@ -1,5 +1,9 @@
 package rocks.zipcode.assessment2.arrays;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -10,7 +14,9 @@ public class IntegerArrayUtils {
      * @return - identical array with one additional element of `valueToBeAdded` at the end of the array
      */
     public static Integer[] add(Integer[] integerArray, Integer valueToBeAdded) {
-        return null;
+        ArrayList<Integer> addedValue= new ArrayList<>(Arrays.asList(integerArray));
+        addedValue.add(valueToBeAdded);
+        return addedValue.toArray(new Integer[addedValue.size()]);
     }
 
     /**
@@ -20,7 +26,10 @@ public class IntegerArrayUtils {
      * @return `integerArray` with `valueToBeInserted` at index number `indexToInsertAt`
      */
     public static Integer[] replace(Integer[] integerArray, int indexToInsertAt, Integer valueToBeInserted) {
-        return null;
+
+        Integer[] replaced = Arrays.copyOf(integerArray,integerArray.length);
+        replaced[indexToInsertAt]=valueToBeInserted;
+        return replaced;
     }
 
     /**
@@ -29,7 +38,10 @@ public class IntegerArrayUtils {
      * @return element located at `indexToFetch`
      */
     public static Integer get(Integer[] integerArray, Integer indexToFetch) {
-        return null;
+        ArrayList<Integer> addedValue= new ArrayList<>(Arrays.asList(integerArray));
+        int index = addedValue.indexOf(indexToFetch);
+
+        return integerArray[indexToFetch];
     }
 
     /**
@@ -37,7 +49,15 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1 and odd-values decremented by 1
      */
     public static Integer[] incrementEvenDecrementOdd(Integer[] integerArray) {
-        return null;
+        Integer[] incremented = new Integer[integerArray.length];
+        for (int i = 0; i <integerArray.length ; i++) {
+            if(integerArray[i]%2==0){
+                incremented[i] = integerArray[i]+1;
+            }else
+            incremented[i] = integerArray[i]-1;
+
+        }
+        return incremented;
     }
 
     /**
@@ -45,7 +65,14 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1
      */
     public static Integer[] incrementEven(Integer[] integerArray) {
-        return null;
+        Integer[] incremented = new Integer[integerArray.length];
+        for (int i = 0; i <integerArray.length ; i++) {
+            if (integerArray[i] % 2 == 0) {
+                incremented[i] = integerArray[i]+1;
+                System.out.println(integerArray[i]);
+            }else
+               incremented[i]=integerArray[i];
+        }return incremented;
     }
 
     /**
@@ -53,6 +80,14 @@ public class IntegerArrayUtils {
      * @return identical array with odd-values decremented by 1
      */
     public static Integer[] decrementOdd(Integer[] input) {
-        return null;
+        Integer[] decremented = new Integer[input.length];
+        for (int i = 0; i <input.length ; i++) {
+            if (input[i] % 2 != 0) {
+                decremented[i] = input[i]-1;
+                System.out.println(input[i]);
+            }else
+                decremented[i]=input[i];
+        }return decremented;
     }
+
 }
