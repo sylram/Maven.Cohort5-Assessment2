@@ -52,9 +52,9 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-
-        for (char x : string.toCharArray()) {
-            if (!Character.isLetter(x)) {
+        String y= string.replace(" ","");
+        for (char x : y.toCharArray()) {
+            if (!Character.isAlphabetic(x)) {
                 return false;
             }
 
@@ -65,39 +65,8 @@ public class StringUtils {
 
     }
 
-//        String alphabet1 = "abcdefghijklmnopqrstuvwxyz";
-//        char[] split = string.toCharArray();
-//        String[] splitted = string.split("");
-//        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-//        for (int i = 0; i < splitted.length; i++) {
-//            if (alphabet1.contains(String.valueOf(split[i]))) {
-//
-//            }
-//            return false;
 
-//        }
-//        return true;
-//        char[] stringChars = string.toCharArray();
-//        for (int i=0;i<stringChars.length;i++ ) {
-//            if (!Character.isLetter(stringChars[i])) {
-//
-//                return false;
-//            }
-//
-//        }return true;
-//    }
-//        string.replaceAll(" ","");
-//        char[] splitted = string.toCharArray();
-//        for (int i = 0; i < splitted.length; i++) {
-//            if (Character.isLetter(splitted[i])) {
-//
-//                return true;
-//            }
-//
-//
-//        }
-//        return false;
-//    }
+
         /**
          * @param string - string to be evaluated
          * @return - true if string only contains numeric characters
@@ -124,9 +93,6 @@ public class StringUtils {
             if (Character.isLetterOrDigit(x)) {
                 return false;
             }
-
-
-
         }
         return true;
 

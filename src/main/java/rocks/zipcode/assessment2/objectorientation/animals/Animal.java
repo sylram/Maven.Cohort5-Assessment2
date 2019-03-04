@@ -14,6 +14,7 @@ public class Animal {
     public Animal() {
         this.id =null;
         this.owner = new Person();
+
     }
 
     /**
