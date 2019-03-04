@@ -11,7 +11,6 @@ public class Address {
     public String zipcode;
 
 
-
     public Address() {
         this.addressLine1 = "";
         this.addressLine2 = "";
@@ -23,15 +22,15 @@ public class Address {
     /**
      * @param addressLine1 - first address line
      * @param addressLine2 - second address line
-     * @param city - city of location
-     * @param state - state of city
-     * @param zipcode - zipcode of region
+     * @param city         - city of location
+     * @param state        - state of city
+     * @param zipcode      - zipcode of region
      */
     public Address(String addressLine1, String addressLine2, String city, String state, String zipcode) {
         this.addressLine1 = addressLine1;
         this.addressLine2 = addressLine2;
         this.city = city;
-        this.state =state;
+        this.state = state;
         this.zipcode = zipcode;
     }
 
@@ -40,7 +39,7 @@ public class Address {
     }
 
     public void setAddressLine1(String addressLine1) {
-        this.addressLine1 =addressLine1;
+        this.addressLine1 = addressLine1;
     }
 
     public String getAddressLine2() {
@@ -48,7 +47,7 @@ public class Address {
     }
 
     public void setAddressLine2(String addressLine2) {
-        this.addressLine2 =addressLine2;
+        this.addressLine2 = addressLine2;
     }
 
     public String getCity() {
@@ -72,30 +71,27 @@ public class Address {
     }
 
     public void setZipcode(String zipcode) {
-        this.zipcode =zipcode;
+        this.zipcode = zipcode;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == this) {
             return true;
-        }return false;
+        }
+        return false;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
 //        Address{addressLine1='123 Gitlabs', addressLine2='', city='New Castle', state='Delaware', zipcode='19720'}
-        String address = "Address{"+
-               "addressLine1=" +"'"+ addressLine1+"', "+
-                "addressLine2="+"'"+ addressLine2+"', "+
-                "city=" +"'"+ city+"', "+
-                "state=" +"'"+ state+"', "+
-                "zipcode="+"'"+ zipcode+"'"+"}";
+        String address = "Address{" +
+                "addressLine1=" + "'" + addressLine1 + "', " +
+                "addressLine2=" + "'" + addressLine2 + "', " +
+                "city=" + "'" + city + "', " +
+                "state=" + "'" + state + "', " +
+                "zipcode=" + "'" + zipcode + "'" + "}";
 
         return address;
     }
-//    @Override
-//    public int compareTo(Address o) {
-//        return o.compareTo(this);
-//    }
 }

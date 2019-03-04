@@ -10,6 +10,7 @@ import java.util.HashMap;
 public class MonthConversion {
     HashMap<Integer,String> calendar;
     Collection<String> calendar2;
+    int number=0;
 
     public MonthConversion(){
         calendar = new HashMap<>();
@@ -40,8 +41,9 @@ public class MonthConversion {
      * @return - the ordinal of the month in the year
      */
     public int getNumber(String monthName) {
-        int number = 0;
+
         for (Integer s : calendar.keySet()) {
+
             if (calendar.get(s).equals(monthName)) {
                 number = s;
 

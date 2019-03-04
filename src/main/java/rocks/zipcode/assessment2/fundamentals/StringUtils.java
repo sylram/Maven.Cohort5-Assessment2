@@ -4,18 +4,23 @@ package rocks.zipcode.assessment2.fundamentals;
  * @author leon on 28/11/2018.
  */
 public class StringUtils {
+
+    public static String calculateSpace(String s1, int space){
+        int amountOfSpace = space - s1.length();
+        String padLeft = "";
+        for (int i = 0; i < amountOfSpace; i++) {
+            padLeft += (" ");
+        }return padLeft ;
+
+    }
     /**
      * @param stringToBePadded - string value to be flushed right
      * @param amountOfPadding  - amount of padding to be flushed left
      * @return `stringToBePadded` flushed right by left-padding
      */
     public static String padLeft(String stringToBePadded, int amountOfPadding) {
-        int amountOfSpace = amountOfPadding - stringToBePadded.length();
-        String padLeft = "";
-        for (int i = 0; i < amountOfSpace; i++) {
-            padLeft += (" ");
-        }
-        return padLeft + stringToBePadded;
+
+        return calculateSpace(stringToBePadded,amountOfPadding)+stringToBePadded;
     }
 
     /**
@@ -24,12 +29,8 @@ public class StringUtils {
      * @return `stringToBePadded` flushed right by right-padding
      */
     public static String padRight(String stringToBePadded, int amountOfPadding) {
-        int amountOfSpace = amountOfPadding - stringToBePadded.length();
-        String padRight = "";
-        for (int i = 0; i < amountOfSpace; i++) {
-            padRight += (" ");
-        }
-        return stringToBePadded + padRight;
+
+        return stringToBePadded + calculateSpace(stringToBePadded,amountOfPadding);
     }
 
     /**
@@ -51,6 +52,19 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
+
+        for (char x : string.toCharArray()) {
+            if (!Character.isLetter(x)) {
+                return false;
+            }
+
+
+
+        }
+        return true;
+
+    }
+
 //        String alphabet1 = "abcdefghijklmnopqrstuvwxyz";
 //        char[] split = string.toCharArray();
 //        String[] splitted = string.split("");
@@ -63,31 +77,39 @@ public class StringUtils {
 
 //        }
 //        return true;
-        for (char x : string.toCharArray()) {
-            if (Character.isLetter(x)) {
-
-                return true;
-            }
-
-        }return false;
-    }
+//        char[] stringChars = string.toCharArray();
+//        for (int i=0;i<stringChars.length;i++ ) {
+//            if (!Character.isLetter(stringChars[i])) {
+//
+//                return false;
+//            }
+//
+//        }return true;
+//    }
 //        string.replaceAll(" ","");
-//        return string.matches("[a-zA-Z]+");
-
-
-
-    /**
-     * @param string - string to be evaluated
-     * @return - true if string only contains numeric characters
-     */
+//        char[] splitted = string.toCharArray();
+//        for (int i = 0; i < splitted.length; i++) {
+//            if (Character.isLetter(splitted[i])) {
+//
+//                return true;
+//            }
+//
+//
+//        }
+//        return false;
+//    }
+        /**
+         * @param string - string to be evaluated
+         * @return - true if string only contains numeric characters
+         */
     public static Boolean isNumericString(String string) {
         for (char n : string.toCharArray()) {
-            if (Character.isDigit(n)) {
-                return true;
+            if (!Character.isDigit(n)) {
+                return false;
             }
 
         }
-        return false;
+        return true;
 
 
     }
@@ -100,11 +122,13 @@ public class StringUtils {
 
         for (char x : string.toCharArray()) {
             if (Character.isLetterOrDigit(x)) {
+                return false;
             }
-            return false;
+
 
 
         }
         return true;
+
     }
 }

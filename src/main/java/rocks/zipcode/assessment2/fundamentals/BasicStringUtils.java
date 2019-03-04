@@ -42,8 +42,13 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
+        String removed="";
         char[] toChar = charactersToRemove.toCharArray();
-       String removed = string.replace(charactersToRemove,"");
+        for (int i = 0; i <toChar.length ; i++) {
+            removed=string.replace(String.valueOf(toChar[i]),"");
+            string=removed;
+
+        }
         return removed;
     }
 
