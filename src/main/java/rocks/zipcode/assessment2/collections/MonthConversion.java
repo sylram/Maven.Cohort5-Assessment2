@@ -20,22 +20,10 @@ public class MonthConversion {
      */
 
     public void add(Integer monthNumber, String monthName) {
-//        calendar = new HashMap<>();
-//            if (calendar.isEmpty()){
-//                calendar = new HashMap<>();
-//                calendar.put(monthNumber, monthName);
-//            }else{
-                calendar.put(monthNumber, monthName);
+        calendar.put(monthNumber, monthName);
             }
-//        for (int i = 0; i <12 ; i++) {
-//            calendar.put(i,"");
-//        }
-//
-//        for (Integer n : calendar.keySet()) {
-//            if (calendar.get(n) == null) {
-//
-//            }
-//
+
+
 
 
     /**
